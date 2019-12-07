@@ -65,6 +65,7 @@
   grid-template-columns: 1fr;
   grid-gap: 1rem;
   margin-right: 2.5rem;
+  overflow: hidden;
 
   @include breakpoint(medium) {
     grid-template-columns: repeat(2, 1fr);
@@ -106,6 +107,7 @@
         }
         .card-text {
           margin-left: 1rem;
+          word-break: break-all;
         }
 
         h4 {

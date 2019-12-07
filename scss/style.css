@@ -26,7 +26,7 @@ h6 {
 
 header {
   background-color: #cb4335;
-  height: 8vh;
+  height: 3.5rem;
   display: -ms-grid;
   display: grid;
   place-content: center;
@@ -114,6 +114,7 @@ header {
       grid-template-columns: 1fr;
   grid-gap: 1rem;
   margin-right: 2.5rem;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 699px) {
@@ -168,6 +169,7 @@ header {
   }
   #news li .news-card .card-text {
     margin-left: 1rem;
+    word-break: break-all;
   }
   #news li .news-card h4 {
     word-break: break-all;
