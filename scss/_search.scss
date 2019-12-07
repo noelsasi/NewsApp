@@ -76,17 +76,17 @@
   }
 
   img {
-    max-height: 30vh;
-    max-width: 30vw;
+    max-height: 50vh;
+    max-width: 70vw;
 
     @include breakpoint(medium) {
-      max-height: 30vh;
-      // width: 35vw;
+      max-height: 10vh;
+      max-width: 25vw;
     }
 
     @include breakpoint(large) {
-      height: auto;
-      width: 100%;
+      min-width: 100%;
+      min-height: 100%;
     }
   }
 
@@ -103,7 +103,10 @@
         grid-template-columns: 30% 70%;
 
         .card-img {
-          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
         }
         .card-text {
           margin-left: 1rem;
