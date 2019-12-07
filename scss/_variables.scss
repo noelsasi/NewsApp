@@ -1,0 +1,44 @@
+$font-title: "Raleway", sans-serif;
+$font-body: "Open Sans", sans-serif;
+
+$border-radius-circle: 30px;
+
+$breakpoints: (
+  small: 499px,
+  medium: 699px,
+  large: 999px,
+  xlarge: 1399px
+);
+
+@mixin breakpoint($size) {
+  $breakpoint-value: map-get($breakpoints, $size);
+
+  @media screen and (min-width: $breakpoint-value) {
+    @content;
+  }
+}
+
+html {
+  font-size: 100%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-body;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-title;
+}

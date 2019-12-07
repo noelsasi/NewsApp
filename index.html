@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>News App</title>
+    <link rel="stylesheet" href="./scss/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:400,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h2>International News</h2>
+    </header>
+    <section class="search">
+      <div class="container">
+        <div class="search-header">
+          <h3>Latest News Search</h3>
+        </div>
+        <div id="refresh"></div>
+        <div class="search-bar">
+          <form>
+            <div class="search-field">
+              <input
+                placeholder="Search for a topic"
+                type="text"
+                name="query"
+              />
+              <button class="btn-search" type="submit">
+                <span role="img" aria-label="search-icon">🔍</span>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="search-data">
+          <ul id="news"></ul>
+        </div>
+      </div>
+    </section>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
