@@ -35,10 +35,21 @@ header {
 
 .search {
   background-color: #ddd;
-  width: 80%;
   margin: 0 auto;
   margin-top: 3rem;
   padding-bottom: 3rem;
+}
+
+@media screen and (min-width: 699px) {
+  .search {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 999px) {
+  .search {
+    width: 80%;
+  }
 }
 
 .search .container {
