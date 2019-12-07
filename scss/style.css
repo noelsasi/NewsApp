@@ -114,7 +114,6 @@ header {
       grid-template-columns: 1fr;
   grid-gap: 1rem;
   margin-right: 2.5rem;
-  overflow: hidden;
 }
 
 @media screen and (min-width: 699px) {
@@ -175,7 +174,6 @@ header {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    overflow: hidden;
   }
   #news li .news-card .card-text {
     margin-left: 1rem;
