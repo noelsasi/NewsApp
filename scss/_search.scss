@@ -1,15 +1,15 @@
 .search {
   background-color: #ddd;
-  // width: 80%;
   margin: 0 auto;
-  margin-top: 3rem;
   padding-bottom: 3rem;
 
-  @include breakpoint(medium) {
+  @include breakpoint(large) {
+    margin-top: 3rem;
     width: 80%;
   }
 
-  @include breakpoint(large) {
+  @include breakpoint(medium) {
+    margin-top: 3rem;
     width: 80%;
   }
 
@@ -77,6 +77,11 @@
   img {
     max-height: 30vh;
     max-width: 30vw;
+
+    @include breakpoint(medium) {
+      max-height: 30vh;
+      // width: 35vw;
+    }
 
     @include breakpoint(large) {
       height: auto;

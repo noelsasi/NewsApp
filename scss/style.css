@@ -36,18 +36,19 @@ header {
 .search {
   background-color: #ddd;
   margin: 0 auto;
-  margin-top: 3rem;
   padding-bottom: 3rem;
-}
-
-@media screen and (min-width: 699px) {
-  .search {
-    width: 80%;
-  }
 }
 
 @media screen and (min-width: 999px) {
   .search {
+    margin-top: 3rem;
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 699px) {
+  .search {
+    margin-top: 3rem;
     width: 80%;
   }
 }
@@ -132,6 +133,12 @@ header {
 #news img {
   max-height: 30vh;
   max-width: 30vw;
+}
+
+@media screen and (min-width: 699px) {
+  #news img {
+    max-height: 30vh;
+  }
 }
 
 @media screen and (min-width: 999px) {
