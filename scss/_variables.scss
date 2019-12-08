@@ -5,7 +5,7 @@ $border-radius-circle: 30px;
 
 $breakpoints: (
   small: 499px,
-  medium: 699px,
+  medium: 749px,
   large: 999px,
   xlarge: 1399px
 );
@@ -30,6 +30,7 @@ html {
 
 body {
   font-family: $font-body;
+  font-size: 14px;
   margin: 0;
   padding: 0;
 }
