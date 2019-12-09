@@ -14,6 +14,7 @@ body {
   font-size: 14px;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 h1,
@@ -117,16 +118,16 @@ header {
 #news {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
+  -ms-grid-columns: 300px;
+      grid-template-columns: 300px;
   grid-gap: 1rem;
   margin-right: 2.5rem;
 }
 
 @media screen and (min-width: 749px) {
   #news {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-columns: (300px)[2];
+        grid-template-columns: repeat(2, 300px);
     max-width: 100%;
   }
 }
@@ -154,12 +155,7 @@ header {
   border-radius: 5px;
 }
 
-#news li ul li {
-  border: none;
-  list-style-type: square;
-  padding: 0.2rem;
-}
-
+#news li ul li,
 #news li ol li {
   border: none;
   list-style-type: square;
