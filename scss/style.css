@@ -74,6 +74,12 @@ header {
   margin-bottom: 1rem;
 }
 
+.search .container #search-query {
+  margin-top: 1rem;
+  margin-left: 3rem;
+  font-size: 14px;
+}
+
 .search-field {
   min-width: 200px;
   width: 72.5vw;
@@ -146,6 +152,42 @@ header {
   background-color: #fff;
   padding: 1rem;
   border-radius: 5px;
+}
+
+#news li ul li {
+  border: none;
+  list-style-type: square;
+  padding: 0.2rem;
+}
+
+#news li ol li {
+  border: none;
+  list-style-type: square;
+  padding: 0.2rem;
+}
+
+#news li .card-text .source {
+  font-weight: bold;
+  color: #464646;
+  font-size: 12px;
+}
+
+#news li .card-text .source::after {
+  content: "";
+  background: #272727;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  position: relative;
+  left: 7px;
+  top: -2px;
+  display: inline-block;
+}
+
+#news li .card-text .time {
+  margin-left: 0.8rem;
+  color: #7c7c7c;
+  font-size: 12px;
 }
 
 @media screen and (min-width: 999px) {

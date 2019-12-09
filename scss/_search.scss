@@ -28,6 +28,12 @@
       margin-right: 3rem;
       margin-bottom: 1rem;
     }
+
+    #search-query {
+      margin-top: 1rem;
+      margin-left: 3rem;
+      font-size: 14px;
+    }
   }
 }
 
@@ -89,9 +95,47 @@
     padding: 1rem;
     border-radius: 5px;
 
-    .card-img {
-      // display: flex;
-      // place-content: center;
+    ul li {
+      border: none;
+      list-style-type: square;
+      padding: 0.2rem;
+    }
+
+    ol li {
+      border: none;
+      list-style-type: square;
+      padding: 0.2rem;
+    }
+
+    // .card-img {
+    //   display: flex;
+    //   place-content: center;
+    // }
+
+    .card-text {
+      .source {
+        font-weight: bold;
+        color: rgb(70, 70, 70);
+        font-size: 12px;
+
+        &::after {
+          content: "";
+          background: rgb(39, 39, 39);
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          position: relative;
+          left: 7px;
+          top: -2px;
+          display: inline-block;
+        }
+      }
+
+      .time {
+        margin-left: 0.8rem;
+        color: rgb(124, 124, 124);
+        font-size: 12px;
+      }
     }
 
     @include breakpoint(large) {

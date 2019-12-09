@@ -1,15 +1,22 @@
 const ul = document.getElementById("news");
 const apiKey = "615db19d328644f08f2c22856e6efe89";
 
-var vars = {};
-var parts = window.location.href.replace(
+let vars = {};
+let parts = window.location.href.replace(
   /[?&]+([^=&]+)=([^&]*)/gi,
   (m, key, value) => {
     vars[key] = value;
   }
 );
-console.log(vars.query);
-const query = vars.query;
+let query = "recent";
+
+if (vars.query) {
+  query = vars.query;
+  document.getElementById(
+    "search-query"
+  ).innerHTML = `results for your search " <b>${query} </b> "`;
+}
+
 const url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`;
 console.log(url);
 
@@ -20,6 +27,23 @@ createNode = element => {
 
 append = (parent, el) => {
   return parent.appendChild(el);
+};
+
+checkData = data => {
+  if (data !== null) {
+    return data;
+  } else {
+    return "Sorry, no data available";
+  }
+};
+
+noImage = img => {
+  if (img !== null) {
+    return img;
+  } else {
+    const imgUrl = "../img/noimage.png";
+    return imgUrl;
+  }
 };
 
 // fetching data...
@@ -38,31 +62,51 @@ fetch(url)
     }
     return articles.map(article => {
       let li = createNode("li"),
+        div = createNode("div"),
         img = createNode("img"),
         imgWrapper = createNode("div"),
-        div = createNode("div"),
-        cardtext = createNode("div");
+        cardtext = createNode("div"),
+        // footerDiv = createNode("div"),
+        cntSource = createNode("span"),
+        timeago = createNode("span"),
+        p = createNode("p"),
+        h4 = createNode("h4");
+
       div.setAttribute("class", "news-card");
       cardtext.setAttribute("class", "card-text");
       imgWrapper.setAttribute("class", "card-img");
-      p = createNode("p");
-      h4 = createNode("h4");
-      img.src = article.urlToImage;
-      h4.innerHTML = `${article.author}`;
-      p.innerHTML = `${article.content}`;
-      p.innerHTML = `${article.description}`;
+      // footerDiv.setAttribute("class", "card-footer");
+      cntSource.setAttribute("class", "source");
+      timeago.setAttribute("class", "time");
+
+      img.src = noImage(article.urlToImage);
+      h4.innerHTML = checkData(article.title);
+      p.innerHTML = checkData(article.content);
+      cntSource.innerHTML = checkData(article.source.name);
+      let timestamp = new Date(article.publishedAt).getTime();
+      let todate = new Date(timestamp).getDate();
+      let tomonth = new Date(timestamp).getMonth() + 1;
+      let toyear = new Date(timestamp).getFullYear();
+      let original_date = tomonth + "/" + todate + "/" + toyear;
+      timeago.innerHTML = checkData(original_date);
+
       append(ul, li);
       append(li, div);
       append(div, imgWrapper);
       append(div, cardtext);
+      // append(div, footerDiv);
+      // append(footerDiv, cntSource);
+      // append(footerDiv, timeago);
       append(imgWrapper, img);
       append(cardtext, h4);
       append(cardtext, p);
+      append(cardtext, cntSource);
+      append(cardtext, timeago);
     });
   });
 
 // refresh timer
-let timeLeft = 30;
+let timeLeft = 100;
 let timer = document.getElementById("refresh");
 
 let timerId = setInterval(countdown, 1000);
@@ -72,7 +116,7 @@ function countdown() {
     location.reload();
     clearTimeout(timerId);
   } else {
-    timer.innerHTML = "Auto refresh in " + timeLeft;
+    timer.innerHTML = `Auto refresh in  <b>${timeLeft} seconds</b>`;
     timeLeft--;
   }
 }
