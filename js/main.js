@@ -101,7 +101,7 @@ fetch(url)
   });
 
 // refresh timer
-let timeLeft = 100;
+let timeLeft = 60;
 let timer = document.getElementById("refresh");
 
 let timerId = setInterval(countdown, 1000);
