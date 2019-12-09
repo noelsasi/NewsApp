@@ -30,19 +30,19 @@ append = (parent, el) => {
 };
 
 checkData = data => {
-  if (data !== null) {
-    return data;
-  } else {
+  if (data == null || undefined) {
     return "Sorry, no data available";
+  } else {
+    return data;
   }
 };
 
 noImage = img => {
-  if (img !== null) {
-    return img;
-  } else {
+  if (img == null || undefined) {
     const imgUrl = "../img/noimage.png";
     return imgUrl;
+  } else {
+    return img;
   }
 };
 
@@ -66,7 +66,6 @@ fetch(url)
         img = createNode("img"),
         imgWrapper = createNode("div"),
         cardtext = createNode("div"),
-        // footerDiv = createNode("div"),
         cntSource = createNode("span"),
         timeago = createNode("span"),
         p = createNode("p"),
@@ -75,7 +74,6 @@ fetch(url)
       div.setAttribute("class", "news-card");
       cardtext.setAttribute("class", "card-text");
       imgWrapper.setAttribute("class", "card-img");
-      // footerDiv.setAttribute("class", "card-footer");
       cntSource.setAttribute("class", "source");
       timeago.setAttribute("class", "time");
 
@@ -94,9 +92,6 @@ fetch(url)
       append(li, div);
       append(div, imgWrapper);
       append(div, cardtext);
-      // append(div, footerDiv);
-      // append(footerDiv, cntSource);
-      // append(footerDiv, timeago);
       append(imgWrapper, img);
       append(cardtext, h4);
       append(cardtext, p);
