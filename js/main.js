@@ -39,7 +39,7 @@ checkData = data => {
 
 noImage = img => {
   if (img == null || undefined) {
-    const imgUrl = "https://jpassport.asia/static/image-not-available.png"
+    const imgUrl = "https://jpassport.asia/static/image-not-available.png";
     return imgUrl;
   } else {
     return img;
