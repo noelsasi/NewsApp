@@ -73,7 +73,7 @@
   margin-right: 2.5rem;
 
   @include breakpoint(medium) {
-    grid-template-columns: repeat(2, 270px);
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
     max-width: 100%;
   }
 
@@ -86,14 +86,6 @@
     width: 100%;
     height: 25vh;
     object-fit: cover;
-
-    // @include breakpoint(medium) {
-    //   height: 15vh;
-    // }
-
-    // @include breakpoint(large) {
-    //   height: 25vh;
-    // }
   }
 
   li {
@@ -103,10 +95,9 @@
     padding: 1rem;
     border-radius: 5px;
 
-    // .card-img {
-    //   display: flex;
-    //   place-content: center;
-    // }
+    .card-img {
+      align-self: center;
+    }
     ul li,
     ol li {
       border: none;

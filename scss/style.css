@@ -47,7 +47,7 @@ header {
   }
 }
 
-@media screen and (min-width: 749px) {
+@media screen and (min-width: 699px) {
   .search {
     margin-top: 3rem;
     width: 80%;
@@ -123,10 +123,10 @@ header {
   margin-right: 2.5rem;
 }
 
-@media screen and (min-width: 749px) {
+@media screen and (min-width: 699px) {
   #news {
-    -ms-grid-columns: (270px)[2];
-        grid-template-columns: repeat(2, 270px);
+    -ms-grid-columns: (minmax(180px, 1fr))[2];
+        grid-template-columns: repeat(2, minmax(180px, 1fr));
     max-width: 100%;
   }
 }
@@ -152,6 +152,12 @@ header {
   background-color: #fff;
   padding: 1rem;
   border-radius: 5px;
+}
+
+#news li .card-img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 #news li ul li,
