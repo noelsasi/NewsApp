@@ -18,6 +18,7 @@ if (vars.query) {
 }
 
 const url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`;
+const headlines = `https://newsapi.org/v2/top-headlines?sources=the-times-of-india&apiKey=${apiKey}`;
 console.log(url);
 
 // creating nodeElements
@@ -47,7 +48,7 @@ noImage = img => {
 };
 
 // fetching data...
-fetch(url)
+fetch(headlines)
   .then(resp => resp.json())
   .then(data => {
     let articles = data.articles;
