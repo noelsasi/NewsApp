@@ -8,7 +8,7 @@ let parts = window.location.href.replace(
     vars[key] = value;
   }
 );
-let query = "recent";
+let query = "";
 
 if (vars.query) {
   query = vars.query;
@@ -48,7 +48,13 @@ noImage = img => {
 };
 
 // fetching data...
-fetch(headlines)
+let fetching = "";
+if (query.length > 0) {
+  fetching = fetch(url);
+} else {
+  fetching = fetch(headlines);
+}
+fetching
   .then(resp => resp.json())
   .then(data => {
     let articles = data.articles;
